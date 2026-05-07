@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "newmx"
+version = "0.1.1"
+description = "Lossless input-side prompt compression for LLMs via the NewMx赤 Path 1 codec"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Daniel Ortega", email = "cccstudios.pantheon@gmail.com" },
+]
+keywords = [
+    "llm",
+    "prompt-engineering",
+    "tokens",
+    "compression",
+    "openai",
+    "anthropic",
+    "claude",
+    "gpt",
+    "gemini",
+    "tokenizer",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+# Zero runtime dependencies. The codec is pure-Python regex.
+dependencies = []
+
+[project.optional-dependencies]
+# tiktoken is only needed if users want to count exact cl100k_base tokens
+# themselves. The codec does not call it internally.
+tiktoken = ["tiktoken>=0.5"]
+dev = [
+    "pytest>=7",
+    "build",
+    "twine",
+]
+
+[project.urls]
+Homepage      = "https://github.com/CCC-Studios/newmx"
+Documentation = "https://github.com/CCC-Studios/newmx#readme"
+Repository    = "https://github.com/CCC-Studios/newmx"
+Issues        = "https://github.com/CCC-Studios/newmx/issues"
+Paper         = "https://arxiv.org/abs/TBD"
+
+[tool.hatch.build.targets.wheel]
+packages = ["newmx"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"newmx/maps/path1_en_b3_v005_rev4.json" = "newmx/maps/path1_en_b3_v005_rev4.json"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/newmx",
+    "/tests",
+    "/README.md",
+    "/LICENSE",
+    "/pyproject.toml",
+]
