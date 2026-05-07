@@ -7,8 +7,6 @@
 >
 > **Ownership notice:** This repository is published through the CCC Studios GitHub account for development and distribution purposes. No assignment of patent rights, trademark rights, or other intellectual property rights to CCC Studios Inc. is implied by this publication. Any future assignment, if any, will require a separate written agreement signed by Daniel Ortega.
 
-**Compress prompts before sending them to any LLM.** ...
-
 **Compress prompts before sending them to any LLM.** Save tokens, save money, save context window. Works with OpenAI, Anthropic, Google, DeepSeek, and any other LLM that accepts text — no model changes, no fine-tuning, no API integration. Just `pip install` and encode.
 
 ```python
