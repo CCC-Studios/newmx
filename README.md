@@ -135,6 +135,27 @@ If you use NewMx in research, please cite:
 }
 ```
 
+## Trademark and Official Products Notice
+
+NewMx™, NewMx赤™, and related names, logos, symbols, and marks are trademarks or pending trademarks of Daniel Ortega and/or CCC Studios Inc.
+
+The software in this repository is licensed under the Apache License 2.0. You may use, modify, distribute, and integrate the software, including in commercial products, subject to the Apache License 2.0.
+
+However, the Apache License 2.0 does not grant permission to use the NewMx name, logo, or marks to imply that your product, service, extension, IDE, compressor, API, benchmark, or integration is official, certified, endorsed, sponsored, or provided by Daniel Ortega, or the NewMx project.
+
+You may accurately describe compatibility, for example:
+- “Compatible with NewMx”
+- “Uses the NewMx open-source codec”
+- “Integrates the NewMx Apache-2.0 reference implementation”
+
+You may not describe your product as:
+- “Official NewMx IDE”
+- “Official NewMx Compressor”
+- “Official NewMx Google/Chrome Extension”
+- “Certified NewMx Integration”
+- “NewMx by [third party]”
+unless you have written permission from Daniel Ortega.
+
 ## License
 
 Apache 2.0. See [LICENSE](LICENSE).
