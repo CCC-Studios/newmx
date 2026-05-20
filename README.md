@@ -1,4 +1,5 @@
 # NewMx赤 Path 1: Semantically-Lossless Input-Side Prompt Compression via Canonical Phrase-to-Glyph Encoding
+**Input-side prompt compression for LLMs.** Replaces high-frequency natural-language phrases in your prompts with single Unicode glyphs, saving tokens on every message. Codec runs entirely on-device. No network, no analytics, no model fine-tuning required.
 
 > **NewMx™ Path 1**
 > Copyright © 2026 Daniel Ortega.
@@ -53,9 +54,23 @@ pip install newmx
 
 Zero runtime dependencies. Pure Python. Works on Python 3.9+.
 
+## What's in this repo
+
+| Component | Path | Status |
+|---|---|---|
+| Python codec | `newmx/` | Shipped — `pip install newmx` |
+| Chrome extension | `chrome-extension/` | Shipped — manual install |
+| Android app | `android/` | Shipped — see [Releases](https://github.com/CCC-Studios/newmx/releases) for APK |
+| Benchmarks | `benchmarks/` | Reproducible scripts |
+| Codec map data | `newmx/maps/` | v005-rev4: 3,135 phrase mappings |
+
 ## Usage
 
 ### Quick encode (module-level)
+
+```bash
+pip install newmx
+```
 
 ```python
 import newmx
@@ -70,12 +85,18 @@ short = newmx.encode("write me a function in rust")
 
 ### Working with a Codec instance
 
+```bash
+pip install newmx
+```
+
 ```python
 from newmx import Codec
 
 codec = Codec()                              # bundled v005-rev4
 print(codec.codec_version)                   # → "v005-rev4"
 print(codec.num_mappings)                    # → 3135
+
+```
 
 encoded = codec.encode("how to install docker on ubuntu")
 # → "µ install docker on ubuntu"
@@ -105,6 +126,21 @@ response = client.chat.completions.create(
     ],
 )
 ```
+
+### Chrome extension
+
+See [`chrome-extension/README.md`](chrome-extension/README.md) for install
+instructions. Manual sideload, no Chrome Web Store version yet.
+
+### Android app
+
+Two ways to install:
+
+1. **Sideload the APK** — download from [Releases](https://github.com/CCC-Studios/newmx/releases),
+   open on your Android device, allow installation from unknown sources.
+2. **Build from source** — see [`android/README.md`](android/README.md).
+
+Works on Android 6.0 (Marshmallow) and later. Zero permissions.
 
 ## Important: decode-table amortization
 
