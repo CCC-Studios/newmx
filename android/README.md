@@ -54,5 +54,55 @@ cd newmx/android
 # 2. Copy the codec map into Android assets
 cp ../newmx/maps/path1_en_b3_v005_rev4.json app/src/main/assets/
 
-# 3. Build and install on a connected device
+# 3. Open in Android Studio (File → Open → select the `android/` folder)
+# 4. Build & install on connected device
 ./gradlew :app:installDebug
+```
+
+### Building a release APK
+
+If you want to produce a signed APK like the one in Releases:
+
+```bash
+# Generate a keystore (one-time)
+keytool -genkey -v -keystore newmx-release.jks -keyalg RSA \
+    -keysize 2048 -validity 25000 -alias newmx
+
+# Build
+./gradlew :app:assembleRelease
+
+# Output: app/build/outputs/apk/release/app-release.apk
+```
+
+## Architecture
+
+Pure Kotlin, no third-party dependencies beyond AndroidX + Material 3.
+
+- `app/src/main/java/com/cccstudios/newmx/codec/` — Kotlin port of the Python codec
+- `app/src/main/java/com/cccstudios/newmx/ProcessTextActivity.kt` — the `PROCESS_TEXT` intent handler
+- `app/src/main/java/com/cccstudios/newmx/MainActivity.kt` — settings and in-app encoder
+- `app/src/main/assets/path1_en_b3_v005_rev4.json` — codec map (copied from parent directory)
+- `app/src/test/` — codec unit tests
+
+## Parity with Python codec
+
+The Kotlin codec is a line-by-line port of the Python codec. Both should
+produce byte-identical output on the same input. Verify with:
+
+```bash
+python ../scripts/parity_check.py
+```
+
+If you find a discrepancy, file an issue.
+
+## License
+
+Apache 2.0. Same as the parent repo.
+
+## Patent
+
+US Provisional Patent #64/059,223 (filed May 6, 2026).
+
+---
+
+*NewMx Android · CCC Studios Inc. · Apache 2.0*
