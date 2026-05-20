@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- NewMx red — matches the 赤 (red) in the wordmark -->
+    <color name="newmx_red">#C8102E</color>
+    <color name="newmx_red_dark">#8A0A1F</color>
+    <color name="newmx_red_light">#FFC0C9</color>
+
+    <color name="on_primary">#FFFFFF</color>
+
+    <color name="background">#FAFAFA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_surface">#1A1A1A</color>
+    <color name="on_surface_variant">#5F5F5F</color>
+
+    <color name="background_dark">#101012</color>
+    <color name="surface_dark">#1B1B1F</color>
+    <color name="on_surface_dark">#EDEDED</color>
+    <color name="on_surface_variant_dark">#B0B0B0</color>
+
+    <color name="divider">#1F000000</color>
+    <color name="divider_dark">#1FFFFFFF</color>
+</resources>

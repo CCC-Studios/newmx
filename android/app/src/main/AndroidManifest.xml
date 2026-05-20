@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        NewMx Path 1 — Android app.
+
+        No network permission. The codec runs entirely on-device.
+        No analytics, no telemetry, no ads.
+    -->
+
+    <application
+        android:name=".NewMxApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NewMx"
+        tools:targetApi="34">
+
+        <!-- =====================================================
+             MAIN ACTIVITY
+             Setup, settings, codec info, sample encoder.
+             ===================================================== -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- =====================================================
+             PROCESS_TEXT — appears in floating text-selection menu
+             of any app on Android 6+.
+
+             User selects text → menu shows "NewMx" → tap → encoded
+             text returned to source field.
+             ===================================================== -->
+        <activity
+            android:name=".ProcessTextActivity"
+            android:exported="true"
+            android:label="@string/process_text_label"
+            android:icon="@mipmap/ic_launcher"
+            android:theme="@style/Theme.NewMx.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <!-- =====================================================
+             SHARE TARGET — appears in any "share" sheet for text.
+
+             User taps share on selected text → "NewMx" appears →
+             tap → encoded text copied to clipboard + toast.
+             ===================================================== -->
+        <activity
+            android:name=".EncodeShareActivity"
+            android:exported="true"
+            android:label="@string/share_label"
+            android:icon="@mipmap/ic_launcher"
+            android:theme="@style/Theme.NewMx.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Data extraction rules (Android 12+). Allow cloud backup and device
+   transfer of SharedPreferences only.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="sharedpref" path="newmx_settings.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="sharedpref" path="newmx_settings.xml" />
+    </device-transfer>
+</data-extraction-rules>

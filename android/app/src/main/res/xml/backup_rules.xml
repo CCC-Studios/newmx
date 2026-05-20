@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Backup config (Android <12). Only thing we have is SharedPreferences
+   with the include-table toggle, which is harmless to back up.
+-->
+<full-backup-content>
+    <include domain="sharedpref" path="newmx_settings.xml" />
+</full-backup-content>

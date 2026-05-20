@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App identity -->
+    <string name="app_name">NewMx</string>
+    <string name="app_full_name">NewMx Path 1</string>
+
+    <!-- Menu entries that appear in other apps -->
+    <string name="process_text_label">NewMx Encode</string>
+    <string name="share_label">NewMx (encode &amp; copy)</string>
+
+    <!-- Main screen -->
+    <string name="codec_version_label">Codec</string>
+    <string name="codec_version_value">%1$s · %2$d mappings</string>
+
+    <string name="settings_heading">Settings</string>
+    <string name="include_table_label">Include decode table</string>
+    <string name="include_table_help">Prepends the ~4,000-token decode table to every encoding. Required for the LLM to understand the glyphs. Turn OFF only if you\'ve already sent the table once in this conversation.</string>
+
+    <string name="sample_heading">Try it</string>
+    <string name="sample_input_hint">Type or paste a prompt to encode…</string>
+    <string name="sample_output_label">Encoded</string>
+    <string name="sample_stats_format">%1$d chars → %2$d chars · %3$d replacements</string>
+    <string name="copy_encoded_button">Copy encoded</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="nothing_to_copy">Nothing to copy</string>
+
+    <string name="help_button">How to use</string>
+
+    <!-- Help dialog -->
+    <string name="help_dialog_title">How to use NewMx everywhere</string>
+    <string name="help_dialog_body">
+        NewMx works inside any app on your phone with three entry points:\n\n
+        1) TEXT SELECTION MENU\n
+        Select text in any app (ChatGPT, Claude, Gemini, Messages, Notes…), then tap “NewMx Encode” in the floating toolbar. The selected text is replaced with the encoded version.\n\n
+        2) SHARE SHEET\n
+        Tap Share → choose “NewMx (encode &amp; copy)”. The encoded text is copied to your clipboard. Paste anywhere.\n\n
+        3) THIS APP\n
+        Use the “Try it” box above for quick one-off encodings.\n\n
+        TIP: keep \"Include decode table\" ON for the first prompt of a session, then turn it OFF for follow-up prompts in the same conversation.
+    </string>
+    <string name="ok">OK</string>
+
+    <!-- Outcomes -->
+    <string name="encoded_copied_share">Encoded · copied to clipboard</string>
+    <string name="encoded_copied_readonly">Field is read-only · encoded text copied to clipboard</string>
+
+    <!-- Errors -->
+    <string name="error_no_text_selected">No text selected</string>
+    <string name="error_no_text_shared">No text shared</string>
+    <string name="error_encode_failed">Encode failed: %1$s</string>
+
+    <!-- About -->
+    <string name="about_heading">About</string>
+    <string name="about_body">NewMx Path 1 — input-side prompt compression for LLMs. No network. No analytics. Codec runs on-device.</string>
+</resources>
